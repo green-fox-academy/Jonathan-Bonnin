@@ -13,6 +13,6 @@ The projects/exercises are divided in 17 weeks (represented by the folders week-
 1. [Link to my "website" on GitHub](https://jonathan-bonnin.github.io/)
 2. [LinkedIn](https://www.linkedin.com/in/jonathan-bonnin/)
 3. Other repos used during week-01 day-03 to practice using GitHub:
-...*[Patchwork](https://github.com/Jonathan-Bonnin/patchwork)
-...*[hello-world](https://github.com/Jonathan-Bonnin/hello-world
-...*[git-lesson-reposity](https://github.com/Jonathan-Bonnin/git-lesson-repository)
+*[Patchwork](https://github.com/Jonathan-Bonnin/patchwork)
+*[hello-world](https://github.com/Jonathan-Bonnin/hello-world)
+*[git-lesson-repository](https://github.com/Jonathan-Bonnin/git-lesson-repository)
