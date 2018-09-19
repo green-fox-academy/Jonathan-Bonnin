@@ -11,6 +11,7 @@ The projects/exercises are divided in 17 weeks (represented by the folders week-
 ## Links
 
 1. [Link to my "website" on GitHub](https://jonathan-bonnin.github.io/)
+    * [The repo of the game](https://github.com/Jonathan-Bonnin/arcade-game)
 2. [LinkedIn](https://www.linkedin.com/in/jonathan-bonnin/)
 3. Other repos used during week-01 day-03 to practice using GitHub:
     * [Patchwork](https://github.com/Jonathan-Bonnin/patchwork)
