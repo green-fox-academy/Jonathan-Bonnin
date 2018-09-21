@@ -4,7 +4,7 @@ public class Anagram {
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        System.out.println("Gimme 2 strings, I'll tell you if they're an anagram");
+        System.out.println("Gimme 2 strings, I'll tell you if they're an anagram!");
         String str1 = input.nextLine();
         String str2 = input.nextLine();
         System.out.println(isAnagran(str1, str2));
@@ -23,6 +23,9 @@ public class Anagram {
                 if (str2.indexOf(str1.charAt(i)) == -1 ){
                     return false;
                 }
+                String remove = str1.substring(i, i+1);
+                System.out.println(remove);
+                str2 = str2.replace(remove, "");
             }
 
         }
