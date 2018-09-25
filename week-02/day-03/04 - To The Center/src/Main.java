@@ -23,6 +23,7 @@ public class Main {
     }
 
     public static void goTo152152(int startX, int startY, Graphics graphics){
+        graphics.setColor(new Color((int) Math.floor(Math.random()*256),(int) Math.floor(Math.random()*256),(int) Math.floor(Math.random()*256)));
         graphics.drawLine(startX, startY, 152, 152);
     }
 
