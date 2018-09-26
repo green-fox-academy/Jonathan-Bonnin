@@ -14,7 +14,7 @@ public class Main {
         //  - The stars should have random color (some shade of grey)
 
         //Note from student:
-        //Code changed to fill screen resolution 
+        //Code changed to fill screen resolution
 
         Scanner input = new Scanner(System.in);
         System.out.println("Hey sexy, how many stars in the skies for you?");
