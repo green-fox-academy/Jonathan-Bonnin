@@ -14,7 +14,7 @@ public class CountAs {
 
     }
 
-    public static int howManyAsIn (String str){
+    public static int howManyAsIn(String str) {
 
         str = str.toLowerCase();
 
