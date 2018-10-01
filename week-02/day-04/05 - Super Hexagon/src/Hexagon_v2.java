@@ -10,7 +10,7 @@ public class Hexagon_v2 {
         // https://github.com/green-fox-academy/teaching-materials/blob/master/project/drawing/r6.gif
         // you can change the length of the hexagon as well as the number of hexagons per side
 
-        drawHexagonWithHexagons(4, 60, graphics);
+        drawHexagonWithHexagons(777, 5, graphics);
     }
 
     public static void drawHexagonWithHexagons(int hexagonsPerSide, int hexagonLength, Graphics graphics) {

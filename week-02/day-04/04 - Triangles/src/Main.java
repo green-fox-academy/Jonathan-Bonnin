@@ -7,7 +7,7 @@ public class Main {
     static int CANVAS_SIDE = 512;
     public static void mainDraw(Graphics graphics) {
 
-        drawTriangles(40, 20,  graphics);
+        drawTriangles(25, 30,  graphics);
     }
 
     public static void drawTriangles(int lines, int sideAsInt, Graphics graphics){

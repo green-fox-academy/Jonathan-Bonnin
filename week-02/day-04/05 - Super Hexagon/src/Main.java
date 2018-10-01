@@ -4,7 +4,7 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class Main {
     public static void mainDraw(Graphics graphics) {
-        drawHexagons(20, 14, HEIGHT/2, WIDTH/2,  graphics);
+        drawHexagons(8, 40, HEIGHT/2, WIDTH/2,  graphics);
 
     }
     public static void drawHexagons(int sideBlocs, int sideAsInt, int xCenter, int yCenter, Graphics graphics){
