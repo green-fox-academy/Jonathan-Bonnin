@@ -6,7 +6,7 @@
 public class DivideByZero {
 
     public static void main(String[] args) {
-        
+
         try {
             divideTenBy(0);
         } catch (Exception e) {
