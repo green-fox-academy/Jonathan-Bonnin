@@ -45,7 +45,6 @@ public class Logs {
                 uniqueIPs.add(log.substring(27, 39));
             }
         }
-
         return uniqueIPs;
 
     }
