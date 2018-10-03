@@ -5,6 +5,28 @@ public class Week03Day03 {
 
     public static void main(String[] args) {
 
+        //Create Sharpie class
+        //We should know about each sharpie their color (which should be a string), width (which will be a floating point number), inkAmount (another floating point number)
+        //When creating one, we need to specify the color and the width
+        //Every sharpie is created with a default 100 as inkAmount
+        //We can use() the sharpie objects
+        //which decreases inkAmount
+
+        System.out.println();
+
+        Sharpie yellowSharpie = new Sharpie("yellow", 4);
+
+        System.out.println(yellowSharpie.ink); // 100
+
+        for (var i = 0; i < 10; i++) {
+            yellowSharpie.use();
+        }
+
+        System.out.println(yellowSharpie.ink); // 99.89998 ?!
+
+        System.out.println();
+
+
         // Create an Animal class
         //        Every animal has a hunger value, which is a whole number
         //        Every animal has a thirst value, which is a whole number
@@ -14,17 +36,20 @@ public class Week03Day03 {
         //        Every animal can play() which increases both by one
 
         Animal dog = new Animal();
-        System.out.println(dog.hunger); //50
-        System.out.println(dog.thirst); //50
+        System.out.println(dog.hunger); // 50
+        System.out.println(dog.thirst); // 50
         dog.eat();
-        System.out.println(dog.hunger); //49
-        System.out.println(dog.thirst); //50
+        System.out.println(dog.hunger); // 49
+        System.out.println(dog.thirst); // 50
         dog.drink();
-        System.out.println(dog.hunger); //49
-        System.out.println(dog.thirst); //50
+        System.out.println(dog.hunger); // 49
+        System.out.println(dog.thirst); // 50
         dog.play();
-        System.out.println(dog.hunger); //50
-        System.out.println(dog.thirst); //50
+        System.out.println(dog.hunger); // 50
+        System.out.println(dog.thirst); // 50
+
+
+
 
         Fleet fleet = new Fleet();
         // Create a fleet of things to have this output:
@@ -45,6 +70,8 @@ public class Week03Day03 {
 
         standUp.complete();
         eatLunch.complete();
+
+        System.out.println();
 
         System.out.println(fleet);
 
@@ -81,7 +108,11 @@ public class Week03Day03 {
             }
         }
 
+        System.out.println();
+
         System.out.println(dominoes);
+
+        System.out.println();
 
         List<Pokemon> pokemonOfAsh = initializePokemons();
 
