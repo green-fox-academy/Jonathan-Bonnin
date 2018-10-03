@@ -5,6 +5,31 @@ public class Week03Day03 {
 
     public static void main(String[] args) {
 
+        //Create Station and Car classes
+        //  Station
+        //      gasAmount
+        //      refill(car) -> decreases the gasAmount by the capacity of the car and increases the cars gasAmount
+        //  Car
+        //      gasAmount
+        //      capacity
+        //      create constructor for Car where:
+        //      initialize gasAmount -> 0
+        //      initialize capacity -> 100
+
+        System.out.println();
+
+        Station noitats = new Station();
+        Car audiTT = new Car();
+
+        System.out.println("The gasAmount of the station is: " + noitats.gasAmount);
+        System.out.println("The gasAmount of the car is: " + audiTT.gasAmount + ", and the capacity is: " + audiTT.capacity + ".");
+
+        noitats.refill(audiTT);
+        System.out.println("The gasAmount of the station is: " + noitats.gasAmount);
+        System.out.println("The gasAmount of the car is: " + audiTT.gasAmount + ", and the capacity is: " + audiTT.capacity + ".");
+
+        System.out.println();
+
         //Create Student and Teacher classes
         //Student
         //  learn()
@@ -15,7 +40,9 @@ public class Week03Day03 {
 
         Student michel = new Student();
         Teacher jacky = new Teacher();
+
         jacky.teach(michel);
+        System.out.println();
         michel.question(jacky);
 
         System.out.println();
