@@ -5,6 +5,30 @@ public class Week03Day03 {
 
     public static void main(String[] args) {
 
+        //Create Counter class
+        //which has an integer field value
+        //when creating it should have a default value 0 or we can specify it when creating
+        //we can add(number) to this counter another whole number
+        //or we can add() without parameters just increasing the counter's value by one
+        //and we can get() the current value
+        //also we can reset() the value to the initial value
+        //Check if everything is working fine with the proper test
+        //Download CounterTest.java and place it next to your solution
+        //If something's red in it, ALT+Enter Add JUnit5 to classpath (5 aka JUnit FIVE not 4 or 3)
+        //Then run the tests with the green play button before the lines (run all of them before the classname)
+
+        Counter countTester = new Counter(10);
+        System.out.println(countTester.get()); // 10
+        countTester.add(32);
+        System.out.println(countTester.get()); // 42
+        countTester.reset();
+        System.out.println(countTester.get()); // 0
+
+        System.out.println();
+
+
+
+
         //Create Sharpie class
         //We should know about each sharpie their color (which should be a string), width (which will be a floating point number), inkAmount (another floating point number)
         //When creating one, we need to specify the color and the width
@@ -12,7 +36,6 @@ public class Week03Day03 {
         //We can use() the sharpie objects
         //which decreases inkAmount
 
-        System.out.println();
 
         Sharpie yellowSharpie = new Sharpie("yellow", 4);
 
@@ -25,7 +48,6 @@ public class Week03Day03 {
         System.out.println(yellowSharpie.ink); // 99.89998 ?!
 
         System.out.println();
-
 
         // Create an Animal class
         //        Every animal has a hunger value, which is a whole number
