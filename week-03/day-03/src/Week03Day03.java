@@ -5,6 +5,30 @@ public class Week03Day03 {
 
     public static void main(String[] args) {
 
+        
+
+        Fleet fleet = new Fleet();
+        // Create a fleet of things to have this output:
+        // 1. [ ] Get milk
+        // 2. [ ] Remove the obstacles
+        // 3. [x] Stand up
+        // 4. [x] Eat lunch
+
+        Thing getMilk = new Thing("Get milk");
+        Thing rmObstables = new Thing("Remove the obstacles");
+        Thing standUp = new Thing("Stand up");
+        Thing eatLunch = new Thing("Eat lunch");
+
+        fleet.add(getMilk);
+        fleet.add(rmObstables);
+        fleet.add(standUp);
+        fleet.add(eatLunch);
+
+        standUp.complete();
+        eatLunch.complete();
+
+        System.out.println(fleet);
+
         // You have a `DiceSet` class which has a list for 6 dices
         // You can roll all of them with roll()
         // Check the current rolled numbers with getCurrent()
