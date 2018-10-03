@@ -5,6 +5,26 @@ public class Week03Day03 {
 
     public static void main(String[] args) {
 
+        // You have a `DiceSet` class which has a list for 6 dices
+        // You can roll all of them with roll()
+        // Check the current rolled numbers with getCurrent()
+        // You can reroll with reroll()
+        // Your task is to roll the dices until all of the dices are 6
+
+
+
+        DiceSet diceSet = new DiceSet();
+
+        for (int i = 0; i < diceSet.dices.length; i++) {
+            while((diceSet.dices[i]) != 6){
+                diceSet.reroll(i);
+            };
+        }
+
+        for (int i = 0; i < diceSet.dices.length; i++) {
+            System.out.println(diceSet.dices[i]);
+        }
+
         List<Domino> dominoes = initializeDominoes();
         // You have the list of Dominoes
         // Order them into one snake where the adjacent dominoes have the same numbers on their adjacent sides
