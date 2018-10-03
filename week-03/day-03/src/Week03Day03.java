@@ -5,6 +5,38 @@ public class Week03Day03 {
 
     public static void main(String[] args) {
 
+        //Reuse your Sharpie class
+        //Create SharpieSet class
+        //  it contains a list of Sharpie
+        //  countUsable() -> sharpie is usable if it has ink in it
+        //  removeTrash() -> removes all unusable sharpies
+
+        Sharpie greenSharpie = new Sharpie("green", 3);
+        Sharpie blueSharpie = new Sharpie("blue", 2);
+        Sharpie pinkSharpie = new Sharpie("pink", 6);
+
+        SharpieSet sharpieSet = new SharpieSet();
+
+        sharpieSet.collectionOfSharpies.add(greenSharpie);
+        sharpieSet.collectionOfSharpies.add(blueSharpie);
+        sharpieSet.collectionOfSharpies.add(pinkSharpie);
+
+        System.out.println(sharpieSet.countUsable());
+        showSharpies(sharpieSet.collectionOfSharpies);
+        System.out.println();
+
+        System.out.println("Now let's deplete the first one...");
+        while (greenSharpie.ink > 0){
+            greenSharpie.use();
+        }
+        System.out.println(sharpieSet.countUsable());
+        showSharpies(sharpieSet.collectionOfSharpies);
+        System.out.println();
+
+        System.out.println("Now let's remove the trashed sharpies");
+        sharpieSet.removeTrash();
+        showSharpies(sharpieSet.collectionOfSharpies);
+
         //Create Station and Car classes
         //  Station
         //      gasAmount
@@ -200,6 +232,15 @@ public class Week03Day03 {
         }
 
         System.out.print("I choose you, " + effectivePokemon);
+    }
+
+    static void showSharpies(List<Sharpie> list){
+        for (Sharpie sharpie: list) {
+            System.out.print(sharpie.color + "  ");
+            System.out.print(sharpie.width + "  ");
+            System.out.print(sharpie.ink);
+            System.out.println();
+        }
     }
 
     static List<Domino> initializeDominoes() {
