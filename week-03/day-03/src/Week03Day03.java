@@ -5,7 +5,26 @@ public class Week03Day03 {
 
     public static void main(String[] args) {
 
-        
+        // Create an Animal class
+        //        Every animal has a hunger value, which is a whole number
+        //        Every animal has a thirst value, which is a whole number
+        //        when creating a new animal object these values are created with the default 50 value
+        //        Every animal can eat() which decreases their hunger by one
+        //        Every animal can drink() which decreases their thirst by one
+        //        Every animal can play() which increases both by one
+
+        Animal dog = new Animal();
+        System.out.println(dog.hunger); //50
+        System.out.println(dog.thirst); //50
+        dog.eat();
+        System.out.println(dog.hunger); //49
+        System.out.println(dog.thirst); //50
+        dog.drink();
+        System.out.println(dog.hunger); //49
+        System.out.println(dog.thirst); //50
+        dog.play();
+        System.out.println(dog.hunger); //50
+        System.out.println(dog.thirst); //50
 
         Fleet fleet = new Fleet();
         // Create a fleet of things to have this output:
