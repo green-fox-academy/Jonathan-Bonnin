@@ -5,6 +5,21 @@ public class Week03Day03 {
 
     public static void main(String[] args) {
 
+        //Create Student and Teacher classes
+        //Student
+        //  learn()
+        //  question(teacher) -> calls the teachers answer method
+        //Teacher
+        //  teach(student) -> calls the students learn method
+        //  answer()
+
+        Student michel = new Student();
+        Teacher jacky = new Teacher();
+        jacky.teach(michel);
+        michel.question(jacky);
+
+        System.out.println();
+
         //Create Counter class
         //which has an integer field value
         //when creating it should have a default value 0 or we can specify it when creating
