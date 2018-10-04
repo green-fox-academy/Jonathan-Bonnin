@@ -9,13 +9,15 @@ public class EndlessHexagons {
         // reproduce this:
         //  https://github.com/green-fox-academy/teaching-materials/blob/master/workshop/recursion/drawing/graphic2.png
         graphics.setColor(Color.white);
-        graphics.fillRect(0,0,729,729);
+        graphics.fillRect(0,0,WIDTH,HEIGHT);
         graphics.setColor(Color.black);
         drawHexagon(WIDTH / 2., WIDTH / 2, HEIGHT / 2, graphics);
+
+
     }
 
     static void drawHexagon(double n, double xCenter, double yCenter, Graphics graphics) {
-        if (n < 3) {
+        if (n < 9) {
             return;
         }
 
@@ -33,8 +35,14 @@ public class EndlessHexagons {
         // draws one hexagon based on its center coordinates and length
         int[] xPoints = getPointsFor("x", xCenter, hexagonLength);
         int[] yPoints = getPointsFor("y", yCenter, hexagonLength);
+        graphics.setColor(new Color(getRandomColor(),getRandomColor(),getRandomColor()));
+        graphics.fillPolygon(xPoints, yPoints, 6);
+    }
 
-        graphics.drawPolygon(xPoints, yPoints, 6);
+    public static int getRandomColor() {
+
+        // returns a number between 0 and 255
+        return (int) (Math.random() * 256);
     }
 
     public static int[] getPointsFor(String point, double center, double hexagonLength) {
@@ -63,6 +71,14 @@ public class EndlessHexagons {
         jFrame.setLocationRelativeTo(null);
         jFrame.setVisible(true);
         jFrame.pack();
+        while(true){
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            panel.repaint();
+        }
     }
 
     static class ImagePanel extends JPanel {
