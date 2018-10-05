@@ -5,13 +5,13 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class GameOfLife {
 
-    static int GRID_WIDTH = 400;
+    static int GRID_WIDTH = 200;
     static int GRID_HEIGHT = GRID_WIDTH/2;
     static boolean[][] IS_ALIVE = new boolean[GRID_WIDTH][GRID_HEIGHT];
     static boolean SEEDER = true;
     static int WIDTH = 1600;
     static int HEIGHT = WIDTH/2;
-    static int FREQUENCY = 500;
+    static int FREQUENCY = 20;
 
     public static void mainDraw(Graphics graphics) {
 
@@ -19,21 +19,35 @@ public class GameOfLife {
         graphics.fillRect(0, 0, WIDTH, HEIGHT);
 
         if(SEEDER){
-//            for (int i = 0; i < IS_ALIVE.length; i++) {
-//                for (int j = 0; j < IS_ALIVE[i].length; j++) {
-//                    if(Math.random() < 0.5){
-//                        IS_ALIVE[i][j] = true;
-//                    }
-//                }
-//            }
-            IS_ALIVE[3][3] = true;
-            IS_ALIVE[3][5] = true;
-            IS_ALIVE[4][4] = true;
-            IS_ALIVE[4][5] = true;
-            IS_ALIVE[5][4] = true;
-            IS_ALIVE[300][100] = true;
-            IS_ALIVE[300][99] = true;
-            IS_ALIVE[300][98] = true;
+
+            //TODO
+            //change GRID_WIDTH to 200
+            //change frequency to 20
+            IS_ALIVE = FirstGeneration.plantRPentomino();
+
+            //skip this one
+            //change GRID_WIDTH to 50
+            //IS_ALIVE = FirstGeneration.plantStillLife();
+
+            //TODO
+            //change frequency to 500
+            //IS_ALIVE = FirstGeneration.plantSmallPeriodOscillators();
+
+            //TODO
+            //change refrequency to 125
+            //IS_ALIVE = FirstGeneration.plantLargePeriodOscillators();
+
+
+            //TODO
+            //change GRID_WIDTH to 100
+            //IS_ALIVE = FirstGeneration.plantGlider();
+            //IS_ALIVE = FirstGeneration.plantLightWeightSpaceship();
+
+            //TODO
+            //change GRID_WIDTH to 200
+            //IS_ALIVE = FirstGeneration.plantGosperGliderGun();
+
+
             SEEDER = false;
         }
 
