@@ -71,14 +71,14 @@ public class EndlessHexagons {
         jFrame.setLocationRelativeTo(null);
         jFrame.setVisible(true);
         jFrame.pack();
-        while(true){
-            try {
-                Thread.sleep(100);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            panel.repaint();
-        }
+//        while(true){
+//            try {
+//                Thread.sleep(100);
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
+//            panel.repaint();
+//        }
     }
 
     static class ImagePanel extends JPanel {
