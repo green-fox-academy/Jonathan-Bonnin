@@ -11,7 +11,7 @@ public class GameOfLife {
     static boolean SEEDER = true;
     static int WIDTH = 1600;
     static int HEIGHT = WIDTH/2;
-    static int FREQUENCY = 20;
+    static int FREQUENCY = 125;
 
     public static void mainDraw(Graphics graphics) {
 
@@ -23,7 +23,7 @@ public class GameOfLife {
             //TODO
             //change GRID_WIDTH to 200
             //change frequency to 20
-            IS_ALIVE = FirstGeneration.plantRPentomino();
+            //IS_ALIVE = FirstGeneration.plantRPentomino();
 
             //skip this one
             //change GRID_WIDTH to 50
@@ -45,7 +45,9 @@ public class GameOfLife {
 
             //TODO
             //change GRID_WIDTH to 200
-            //IS_ALIVE = FirstGeneration.plantGosperGliderGun();
+            IS_ALIVE = FirstGeneration.plantGosperGliderGun();
+
+            //IS_ALIVE = FirstGeneration.plantChaos();
 
 
             SEEDER = false;
