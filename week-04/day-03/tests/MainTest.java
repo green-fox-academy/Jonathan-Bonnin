@@ -40,4 +40,21 @@ public class MainTest {
         assertEquals(999, Main.sum(list));
     }
 
+    @Test
+    public void isAnagramDifferentLengthTest(){
+        assertEquals(false, Main.isAnagram("aa", "aaa"));
+    }
+
+    @Test
+    public void isAnagramDiffentLetterCountTest(){
+        assertEquals(false, Main.isAnagram("oop", "opp"));
+    }
+
+    @Test
+    public void isAnagramTest(){
+        assertEquals(true, Main.isAnagram("Michel", "EL Mich"));
+    }
+
+
+
 }
