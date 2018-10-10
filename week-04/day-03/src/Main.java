@@ -2,14 +2,29 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashMap;
 
 public class Main {
 
 
     public static void main(String[] args) {
-        ArrayList<Integer> list = new ArrayList<>();
-        list = null;
-        System.out.println(sum(list));
+
+
+    }
+
+    public static HashMap<Character, Integer> countLetters(String str){
+        HashMap<Character, Integer> dictionary = new HashMap<>();
+
+        for (int i = 0; i < str.length(); i++) {
+            if (dictionary.containsKey(str.charAt(i))){
+                Integer count = dictionary.get(str.charAt(i)) + 1;
+                dictionary.put(str.charAt(i), count);
+            }
+            else {
+                dictionary.put(str.charAt(i), 1);
+            }
+        }
+        return dictionary;
     }
 
     public static int sum(ArrayList<Integer> list) {

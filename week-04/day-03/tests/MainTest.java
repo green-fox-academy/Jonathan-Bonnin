@@ -2,6 +2,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import static org.junit.Assert.*;
 
@@ -54,6 +55,25 @@ public class MainTest {
     public void isAnagramTest(){
         assertEquals(true, Main.isAnagram("Michel", "EL Mich"));
     }
+
+    @Test
+    public void countLettersEmptyStringTest(){
+        assertEquals(true, Main.countLetters("").isEmpty());
+    }
+
+    @Test
+    public void countLettersTest(){
+        HashMap<Character, Integer> dictionary = new HashMap<>();
+        dictionary.put('m', 1);
+        dictionary.put('i', 1);
+        dictionary.put('c', 1);
+        dictionary.put('h', 1);
+        dictionary.put('e', 2);
+        dictionary.put('l', 2);
+        assertEquals(dictionary, Main.countLetters("michelle"));
+    }
+
+
 
 
 
