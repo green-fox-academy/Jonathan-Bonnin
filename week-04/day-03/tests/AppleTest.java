@@ -7,7 +7,7 @@ public class AppleTest {
     Apple apple = new Apple();
 
     @Test
-    public void getApple() {
+    public void getAppleTest() {
 
         // assertEquals("michel", apple.getApple()); // fails
         assertEquals("apple", apple.getApple()); //succeeds
