@@ -17,3 +17,5 @@ The projects/exercises are divided in 17 weeks (represented by the folders week-
     * [Patchwork](https://github.com/Jonathan-Bonnin/patchwork)
     * [hello-world](https://github.com/Jonathan-Bonnin/hello-world)
     * [git-lesson-repository](https://github.com/Jonathan-Bonnin/git-lesson-repository)
+4. Link to TODO Application done in week-04 day-04 and day-05:
+    * [todo-app](https://github.com/Jonathan-Bonnin/todo-app)
