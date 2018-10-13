@@ -4,6 +4,22 @@ public class Main {
 
     public static void main(String[] args) {
 
+        //Garden Exercise
+
+        Garden garden = new Garden();
+        garden.add(new Flower("yellow"));
+        garden.add(new Flower("blue"));
+        garden.add(new Tree("purple"));
+        garden.add(new Tree("orange"));
+
+        garden.situation();
+        garden.waterThePlants(40);
+        garden.waterThePlants(70);
+
+        System.out.println();
+
+        //Green Fox Organisation Exercise
+
         ArrayList<Person> people = new ArrayList<>();
 
         Person mark = new Person("Mark", 46, "male");
@@ -33,7 +49,7 @@ public class Main {
             sponsor.hire();
         }
 
-        for(Person person : people) {
+        for (Person person : people) {
             person.introduce();
             person.getGoal();
         }
