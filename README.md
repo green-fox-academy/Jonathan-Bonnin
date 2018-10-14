@@ -19,3 +19,4 @@ The projects/exercises are divided in 17 weeks (represented by the folders week-
     * [git-lesson-repository](https://github.com/Jonathan-Bonnin/git-lesson-repository)
 4. Link to TODO Application done in week-04 day-04 and day-05:
     * [todo-app](https://github.com/Jonathan-Bonnin/todo-app)
+5. My [public profile] on Pluralsight
