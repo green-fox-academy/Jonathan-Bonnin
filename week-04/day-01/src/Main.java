@@ -4,6 +4,33 @@ public class Main {
 
     public static void main(String[] args) {
 
+        //Aircraft Carrier Exercise
+
+        Carrier foch = new Carrier(20, 9999);
+        foch.add(new F35());
+        foch.add(new F16());
+        foch.add(new F16());
+        foch.add(new F16());
+        foch.add(new F35());
+
+        System.out.println(foch.getStatus());
+        foch.fill(); // add ammo only to the 2 F35, respectively 12 and 8
+        System.out.println(foch.getStatus());
+        foch.ammoStored = 999;
+        foch.fill(); // maxes ammo of all aircrafts
+        System.out.println(foch.getStatus());
+
+        Carrier CDG = new Carrier(50, 1500); // creates 2nd carrier to simulate fight
+        CDG.add(new F16());
+        CDG.add(new F16());
+        CDG.add(new F35());
+        CDG.add(new F35());
+        CDG.fill();
+
+        System.out.println(CDG.fight(foch)); //2nd carrier fights 1st carrier and dies
+        System.out.println();
+        System.out.println(foch.getStatus()); //1st carrier has now no ammo and lower HP
+
         //Garden Exercise
 
         Garden garden = new Garden();
