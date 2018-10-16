@@ -18,7 +18,7 @@ public class PriceOfBooks {
 
         for (int i = 0; i < map.size(); i++) {
 
-            
+
         }
 
         return 0;
