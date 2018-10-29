@@ -1,10 +1,19 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.OptionalDouble;
 
 public class Main {
 
     public static void main(String[] args) {
+        //Exercise 5
+        //Write a Stream Expression to find the uppercase characters in a string!
+        List<String> strings = Arrays.asList("micHel has onE Lama and eLeven fOxes!");
+        strings.stream().
+                map(str -> str.replaceAll("[^A-Z]", "")).
+                forEach(System.out::println);
+        System.out.println();
+
         //Exercise 4
         //Write a Stream Expression to find which number squared value is more then 20 from the following array:
         ArrayList<Integer> numbers4 = new ArrayList<>(Arrays.asList(3, 9, 2, 8, 6, 5));
