@@ -6,7 +6,17 @@ import java.util.OptionalDouble;
 public class Main {
 
     public static void main(String[] args) {
-        //Exercise 5
+        //Exercise 6;
+        //Write a Stream Expression to find the strings which starts with A and ends with I in the following array:
+        ArrayList<String> cities = new ArrayList<>(Arrays.asList("ROME", "LONDON", "NAIROBI", "CALIFORNIA", "ZURICH",
+                "NEW DELHI", "AMSTERDAM", "ABU DHABI", "PARIS"));
+        cities.stream().
+                filter(city -> city.startsWith("A") && city.endsWith("I")).
+                forEach(System.out::println);
+        System.out.println();
+
+
+        //Exercise 5;
         //Write a Stream Expression to find the uppercase characters in a string!
         List<String> strings = Arrays.asList("micHel has onE Lama and eLeven fOxes!");
         strings.stream().
@@ -14,7 +24,7 @@ public class Main {
                 forEach(System.out::println);
         System.out.println();
 
-        //Exercise 4
+        //Exercise 4;
         //Write a Stream Expression to find which number squared value is more then 20 from the following array:
         ArrayList<Integer> numbers4 = new ArrayList<>(Arrays.asList(3, 9, 2, 8, 6, 5));
         numbers4.stream().
@@ -22,7 +32,7 @@ public class Main {
                 forEach(System.out::println);
         System.out.println();
 
-        //Exercise 3
+        //Exercise 3;
         //Write a Stream Expression to get the squared value of the positive numbers from the following array:
         ArrayList<Integer> numbers3 = new ArrayList<>(Arrays.asList(1, 3, -2, -4, -7, -3, -8, 12, 19, 6, 9, 10, 14));
         numbers3.stream().
@@ -31,7 +41,7 @@ public class Main {
                 forEach(System.out::println);
         System.out.println();
 
-        //Exercise 2
+        //Exercise 2;
         //Write a Stream Expression to get the average value of the odd numbers from the following array:
         ArrayList<Integer> numbers2 = new ArrayList<>(Arrays.asList(1, 3, -2, -4, -7, -3, -8, 12, 19, 6, 9, 10, 14));
         OptionalDouble average = numbers2.stream().
