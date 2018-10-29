@@ -2,8 +2,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Garden {
-    List<Plant> garden = new ArrayList<>();
-    double thristyPlants = 0;
+    private List<Plant> garden = new ArrayList<>();
+    private double thristyPlants = 0;
 
     void add(Plant plant) {
         garden.add(plant);

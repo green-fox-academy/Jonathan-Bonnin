@@ -39,6 +39,7 @@ public class Main {
         garden.add(new Tree("purple"));
         garden.add(new Tree("orange"));
 
+
         garden.situation();
         garden.waterThePlants(40);
         garden.waterThePlants(70);
