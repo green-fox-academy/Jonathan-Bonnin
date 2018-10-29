@@ -1,8 +1,30 @@
+import javax.print.DocFlavor;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Main {
 
     public static void main(String[] args) {
+        //Exercise 9
+        //Write a Stream Expression to convert a char array to a string!
+        List<Character> helloWorld = new ArrayList<>();
+        helloWorld.add('H');
+        helloWorld.add('e');
+        helloWorld.add('l');
+        helloWorld.add('l');
+        helloWorld.add('o');
+        helloWorld.add(' ');
+        helloWorld.add('W');
+        helloWorld.add('o');
+        helloWorld.add('r');
+        helloWorld.add('l');
+        helloWorld.add('d');
+        String joinedCharList = helloWorld.stream().
+                map(c -> c.toString()).
+                collect(Collectors.joining(""));
+        System.out.println(joinedCharList);
+        System.out.println();
+
         //Exercise 8;
         //Write a Stream Expression to find the frequency of numbers in the following array:
         ArrayList<Integer> numbers5 = new ArrayList<>(Arrays.asList(5, 9, 1, 2, 3, 7, 5, 6, 7, 3, 7, 6, 8, 5, 4, 9, 6, 2));
