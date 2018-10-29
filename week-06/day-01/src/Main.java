@@ -5,6 +5,14 @@ import java.util.OptionalDouble;
 public class Main {
 
     public static void main(String[] args) {
+        //Exercise 4
+        //Write a Stream Expression to find which number squared value is more then 20 from the following array:
+        ArrayList<Integer> numbers4 = new ArrayList<>(Arrays.asList(3, 9, 2, 8, 6, 5));
+        numbers4.stream().
+                filter(n -> n * n > 20).
+                forEach(System.out::println);
+        System.out.println();
+
         //Exercise 3
         //Write a Stream Expression to get the squared value of the positive numbers from the following array:
         ArrayList<Integer> numbers3 = new ArrayList<>(Arrays.asList(1, 3, -2, -4, -7, -3, -8, 12, 19, 6, 9, 10, 14));
