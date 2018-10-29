@@ -1,11 +1,20 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.OptionalDouble;
+import java.util.*;
 
 public class Main {
 
     public static void main(String[] args) {
+        //Exercise 8;
+        //Write a Stream Expression to find the frequency of numbers in the following array:
+        ArrayList<Integer> numbers5 = new ArrayList<>(Arrays.asList(5, 9, 1, 2, 3, 7, 5, 6, 7, 3, 7, 6, 8, 5, 4, 9, 6, 2));
+        Map<Integer, Integer> intFrequency = new HashMap<>();
+        numbers5.stream().
+                forEach(n -> {
+                    int count = intFrequency.containsKey(Integer.valueOf(n)) ? intFrequency.get(n) : 0;
+                    intFrequency.put(Integer.valueOf(n), ++count);
+                });
+        System.out.println(intFrequency);
+        System.out.println();
+
         //Exercise 6;
         //Write a Stream Expression to find the strings which starts with A and ends with I in the following array:
         ArrayList<String> cities = new ArrayList<>(Arrays.asList("ROME", "LONDON", "NAIROBI", "CALIFORNIA", "ZURICH",
@@ -15,11 +24,10 @@ public class Main {
                 forEach(System.out::println);
         System.out.println();
 
-
         //Exercise 5;
         //Write a Stream Expression to find the uppercase characters in a string!
-        List<String> strings = Arrays.asList("micHel has onE Lama and eLeven fOxes!");
-        strings.stream().
+        List<String> strings1 = Arrays.asList("micHel has onE Lama and eLeven fOxes!");
+        strings1.stream().
                 map(str -> str.replaceAll("[^A-Z]", "")).
                 forEach(System.out::println);
         System.out.println();
@@ -51,11 +59,12 @@ public class Main {
         System.out.println(average.getAsDouble());
         System.out.println();
 
-	    // Exercise 1;
+        // Exercise 1;
         //Write a Stream Expression to get the even numbers from the following array:
         ArrayList<Integer> numbers1 = new ArrayList<>(Arrays.asList(1, 3, -2, -4, -7, -3, -8, 12, 19, 6, 9, 10, 14));
         numbers1.stream().
                 filter(n -> n % 2 == 0).
                 forEach(System.out::println);
+
     }
 }
