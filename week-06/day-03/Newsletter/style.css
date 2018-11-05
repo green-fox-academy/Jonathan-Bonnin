@@ -1,0 +1,16 @@
+body {
+    background-color: lightgray;
+}
+
+form {
+    background-color: #fff;
+    width: 280px;
+    height: 125px;
+    margin: 150px auto;
+    padding: 20px 80px;
+    font-family: roboto; 
+}
+
+input {
+    display: block;
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+</head>
+<body>
+<p id="p1" th:text="${hello}"/>
+<script type="text/javascript" >
+
+    var paragraph = document.querySelector("p");
+
+    paragraph.style.fontSize = Math.random() * 100 + 30 + "px";
+    var red = Math.random() * 256;
+    var green = Math.random() * 256;
+    var blue = Math.random() * 256;
+    paragraph.style.color = "rgb(" + red + ", " + green + ", " + blue + ")";
+
+
+</script>
+</body>
+</html>
