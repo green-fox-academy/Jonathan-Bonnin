@@ -13,7 +13,7 @@ public class AppControllers {
     @GetMapping(value="/show")
     public String showAccount(Model model){
         model.addAttribute("name", simbasAccount.name);
-        model.addAttribute("balance", simbasAccount.balance);
+        model.addAttribute("balance", simbasAccount.formattedBalance);
         model.addAttribute("animalType", simbasAccount.animalType);
         return "show";
     }
