@@ -13,6 +13,8 @@ public class SpringApplicationStarter implements CommandLineRunner {
 
     @Autowired
     Printer printer;
+    @Autowired
+    MyColor myColor;
 
     public static void main(String[] args) {
         SpringApplication.run(SpringApplicationStarter.class, args);
@@ -22,5 +24,6 @@ public class SpringApplicationStarter implements CommandLineRunner {
     @Override
     public void run(String...args) throws Exception {
         printer.log("Daniel rimes with miel");
+        myColor.printColor();
     }
 }
