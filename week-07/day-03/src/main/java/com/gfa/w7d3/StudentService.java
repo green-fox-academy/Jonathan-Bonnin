@@ -24,4 +24,15 @@ public class StudentService {
     public void save(String student) {
         names.add(student);
     }
+
+    public boolean hasName(String student){
+        if(student != null){
+            for(String name : names){
+                if (student.equals(name)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

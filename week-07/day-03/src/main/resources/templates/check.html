@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form action="../gfa/check" method="get">
+    <input type="text" name="name">
+    <button type="submit">Check</button>
+</form>
+<p th:if="${name.isEmpty()}" th:text="'Please enter a name to check if it is in the list'"></p>
+<p th:if="${hasName}" th:text="${name} + ' is in the list!'"></p>
+<p th:if="${!hasName && name.length() > 0}" th:text="${name} + ' is not known by our services...'"></p>
+<a href="../gfa">Back home?</a>
+
+
+</body>
+</html>

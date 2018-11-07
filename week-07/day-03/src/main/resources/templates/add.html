@@ -6,8 +6,10 @@
 </head>
 <body>
 
-<h1>Here are all the students:</h1>
-<h2 th:each="student:${list}" th:text="${student}"></h2>
+<form action="../gfa/save" method="get">
+    <input type="text" name="name">
+    <button type="submit">Add!</button>
+</form>
 
 
 </body>
