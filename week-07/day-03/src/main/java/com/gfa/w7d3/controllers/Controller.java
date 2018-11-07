@@ -1,6 +1,7 @@
 package com.gfa.w7d3.controllers;
 
 
+import com.gfa.w7d3.StudentService;
 import com.gfa.w7d3.UtilityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
@@ -35,6 +36,31 @@ public class Controller {
         model.addAttribute("validEmail", validEmail);
         return "email";
     }
+
+    @GetMapping(value = "/useful/encode")
+    public String caesarEncoder(Model model, @RequestParam String text, @RequestParam int num){
+        String codedText = utilityService.caesar(text, num);
+        model.addAttribute("result", codedText);
+        return "caesar";
+    }
+
+    @GetMapping(value = "/useful/decode")
+    public String caesarDeccoder(Model model, @RequestParam String text, @RequestParam int num){
+        num *= -1;
+        String decodedText = utilityService.caesar(text, num);
+        model.addAttribute("result", decodedText);
+        return "caesar";
+    }
+
+    @Autowired
+    StudentService studentService;
+
+    @GetMapping(value = "/gfa")
+    public String GFAHome(){
+        return "gfa-home";
+    }
+
+
 
 
 }
