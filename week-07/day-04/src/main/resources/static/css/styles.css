@@ -6,12 +6,11 @@ body {
 }
 
 img {
-    
-    box-shadow: 1px 1px 1px black;
+    box-shadow: 2px 2px 2px black;
     border-radius: 50%;
 }
 
-.content {
+main {
     display: flex;
     justify-content: center;
     align-items: center;
