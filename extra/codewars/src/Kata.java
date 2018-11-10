@@ -5,7 +5,7 @@ public final class Kata {
     }
 
     public static String disemvowel(String str) {
-        return str.replaceAll("[aeiou]","");
+        return str.replaceAll("[aeiouAEIOU]","");
     }
 
     public static String disemvowelSolution(String str) {
