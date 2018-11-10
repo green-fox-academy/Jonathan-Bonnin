@@ -4,21 +4,29 @@
     <meta charset="UTF-8">
     <title>Home</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="/css/styles.css">
+
 </head>
 <body>
 
 <main>
     <ul>
-        <li><a href="/login?name=patrik">Information</a></li>
+        <li><a href="/login?name=patrik">Login</a></li>
     </ul>
-    <img src="greenfox.png" alt="purple fox">
-    <p>This is Michel Dugésier, living on coffee and psychedelics. He knows 2 tricks</p>
+
+    <img src="/greenfox.png" alt="green fox avatar"/>
+    <p th:text="'This is ' + ${fox.getName()} + ', living on coffee and psychedelics. He knows 2 tricks'"></p>
     <h1>Known Tricks</h1>
     <ul>
         <li>Change his fur color</li>
         <li>Cook vegan gluten free low carb burgers</li>
     </ul>
+
+    <!--<p th:text="${fox.getName()}"></p>-->
+    <!--<p th:text="${fox.getFood()}"></p>-->
+    <!--<p th:if="${fox.getTricks().isEmpty()}" th:text="${fox.getName()} ' doesn\'t know any tricks!"></p>-->
+
+
 </main>
 
 </body>
