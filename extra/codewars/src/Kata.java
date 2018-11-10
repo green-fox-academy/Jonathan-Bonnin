@@ -4,6 +4,14 @@ public final class Kata {
 
     }
 
+    public static String disemvowel(String str) {
+        return str.replaceAll("[aeiou]","");
+    }
+
+    public static String disemvowelSolution(String str) {
+        return str.replaceAll("(?i)[aeiou]","");
+    }
+
     public static int dontGiveMeFive(int start, int end){
         int result = 0;
         for (int i = start; i <= end; i++){
