@@ -1,6 +1,8 @@
 package com.greenfoxacademy.simbabank.controllers;
 
 import com.greenfoxacademy.simbabank.BankAccount;
+import com.greenfoxacademy.simbabank.BankService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,14 +11,21 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class AppControllers {
 
-    BankAccount simbasAccount = new BankAccount("Simba", 2000, "lion");
+    @Autowired
+    BankService bankService;
 
     @GetMapping(value="/show")
-    public String showAccount(Model model){
-        model.addAttribute("name", simbasAccount.name);
-        model.addAttribute("balance", simbasAccount.formattedBalance);
-        model.addAttribute("animalType", simbasAccount.animalType);
+    public String showSimba(Model model){
+        model.addAttribute("name", bankService.getAccounts().get(0).name);
+        model.addAttribute("balance", bankService.getAccounts().get(0).formattedBalance);
+        model.addAttribute("animalType", bankService.getAccounts().get(0).animalType);
         return "show";
+    }
+
+    @GetMapping(value="/list-all")
+    public String showAllAccounts(Model model){
+        model.addAttribute("accounts", bankService.getAccounts());
+        return "list-all";
     }
 
     @GetMapping(value="/htmlception")

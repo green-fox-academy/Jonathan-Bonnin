@@ -8,11 +8,6 @@ public class BankAccount {
     public String formattedBalance;
     public String animalType;
 
-    double d = 1.234567;
-
-
-
-
     public BankAccount(String name, double balance, String animalType) {
         DecimalFormat df = new DecimalFormat("#.00");
         this.name = name;

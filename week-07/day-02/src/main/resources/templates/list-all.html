@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Balance</th>
+        <th>Species</th>
+    </tr>
+    <tr th:each="account : ${accounts}">
+        <td th:text="${account.name}"></td>
+        <td th:text="|${account.formattedBalance} Zebras|"></td>
+        <td th:text="${account.animalType}"></td>
+    </tr>
+</table>
+</body>
+</html>
