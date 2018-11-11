@@ -5,8 +5,7 @@ import com.greenfoxacademy.simbabank.BankService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class AppControllers {
@@ -20,6 +19,16 @@ public class AppControllers {
         model.addAttribute("balance", bankService.getAccounts().get(0).formattedBalance);
         model.addAttribute("animalType", bankService.getAccounts().get(0).animalType);
         return "show";
+    }
+
+    @PostMapping("/raise-balance/{name}")
+    public String raiseBalance(@PathVariable String name){
+        for(BankAccount bankAccount : bankService.getAccounts()){
+            if(name.equals(bankAccount.name)){
+                bankAccount.balance += 10;
+            }
+        }
+        return "redirect:list-all";
     }
 
     @GetMapping(value="/list-all")
