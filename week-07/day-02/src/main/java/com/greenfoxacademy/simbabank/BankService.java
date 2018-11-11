@@ -10,11 +10,11 @@ public class BankService {
     List<BankAccount> accounts = new ArrayList<>();
 
     BankService(){
-        accounts.add(new BankAccount("Simba", 2000, "lion"));
-        accounts.add(new BankAccount("Timon", 1337, "meerkat"));
-        accounts.add(new BankAccount("Pumba", 9999, "warthog"));
-        accounts.add(new BankAccount("Scar", 654, "lion"));
-        accounts.add(new BankAccount("Simba", 5555, "lion"));
+        accounts.add(new BankAccount("Simba", 2000, "lion", true));
+        accounts.add(new BankAccount("Timon", 1337, "meerkat", true));
+        accounts.add(new BankAccount("Pumba", 9999, "warthog", true));
+        accounts.add(new BankAccount("Scar", 654, "lion", false));
+        accounts.add(new BankAccount("Mufasa", 5555, "lion", true));
     }
 
     public List<BankAccount> getAccounts() {

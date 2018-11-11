@@ -12,12 +12,17 @@
         <th>Balance</th>
         <th>Species</th>
         <th>Index</th>
+        <th>Good or Bad?</th>
     </tr>
     <tr th:each="account : ${accounts}">
         <td th:text="${account.name}"></td>
         <td th:text="|${account.formattedBalance} Zebras|"></td>
         <td th:text="${account.animalType}"></td>
         <td th:text="${accountStat.count}"></td>
+        <th:block th:switch="${account.isGood}">
+            <td th:if="${account.isGood}" th:text="|Good one|"></td>
+            <td th:case=false th:text="|Bad Guy|"></td>
+        </th:block>
     </tr>
 </table>
 </body>
