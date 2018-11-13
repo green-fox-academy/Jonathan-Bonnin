@@ -21,14 +21,12 @@ public class AppControllers {
         return "show";
     }
 
-    @PostMapping("/raise-balance/{name}")
-    public String raiseBalance(@PathVariable String name){
-        for(BankAccount bankAccount : bankService.getAccounts()){
-            if(name.equals(bankAccount.name)){
-                bankAccount.balance += 10;
-            }
-        }
-        return "redirect:list-all";
+    @PostMapping("/raise-balance")
+    public String raiseBalance(@PathVariable BankAccount account){
+
+                account.balance += 10;
+
+        return "list-all";
     }
 
     @GetMapping(value="/list-all")
