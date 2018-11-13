@@ -18,20 +18,12 @@
         <th>Urgent?</th>
         <th>Done?</th>
     </tr>
-    <tr th:each="todo : ${todos}" th:unless="${active}">
+    <tr th:each="todo : ${todos}">
         <td th:text="${todo.id}"></td>
         <td th:text="${todo.title}"></td>
         <td th:text="${todo.urgent}"></td>
         <td th:text="${todo.done}"></td>
     </tr>
-    <tr th:each="todo : ${todos}" th:if="${active && !todo.done}" >
-        <td th:text="${todo.id}"></td>
-        <td th:text="${todo.title}"></td>
-        <td th:text="${todo.urgent}"></td>
-        <td th:text="${todo.done}"></td>
-    </tr>
-
-
 </table>
 
 </body>

@@ -1,11 +1,17 @@
 package com.greenfox.todoappwithsql.controller;
 
+import com.greenfox.todoappwithsql.model.Todo;
 import com.greenfox.todoappwithsql.repository.TodoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping(value = "/todo")
@@ -14,11 +20,22 @@ public class TodoController {
     @Autowired
     TodoRepository repo;
 
-    @RequestMapping(value = {"/list", "/"})
+    @GetMapping(value = {"/list", "/"})
     public String list(Model model, @RequestParam(value = "isActive", required = false) boolean active) {
-        model.addAttribute("active", active);
-        model.addAttribute("todos", repo.findAll());
+        List<Todo> todos = new ArrayList<>();
+        repo.findAll().forEach(todos::add);
+        if(active){
+            todos = todos.stream().
+                    filter(todo -> !todo.isDone()).
+                    collect(Collectors.toList());
+        }
+        model.addAttribute("todos", todos);
         return "todolist";
+    }
+
+    @GetMapping(value = "/add")
+    public String addTodo(){
+        return "add";
     }
 
 
