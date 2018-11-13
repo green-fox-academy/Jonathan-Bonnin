@@ -6,6 +6,7 @@ import javax.persistence.Id;
 
 @Entity
 public class Todo {
+
     @Id
     @GeneratedValue
     long id;
@@ -13,7 +14,15 @@ public class Todo {
     boolean urgent = false;
     boolean done = false;
 
+    public Todo(){
+
+    }
+
     public Todo(String title) {
         this.title = title;
+    }
+
+    public String getTitle(){
+        return title;
     }
 }
