@@ -10,14 +10,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class TodoApplicationStarter implements CommandLineRunner {
 
-    @Autowired
-    TodoRepository repo;
-
     public static void main(String[] args) {
 
         SpringApplication.run(TodoApplicationStarter.class, args);
 
     }
+
+    @Autowired
+    TodoRepository repo;
 
     @Override
     public void run(String... args) throws Exception {

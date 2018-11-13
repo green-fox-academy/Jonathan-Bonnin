@@ -11,11 +11,8 @@ public class Todo {
     @Id
     @GeneratedValue
     long id;
-    @Column
     String title;
-    @Column
     boolean urgent = false;
-    @Column
     boolean done = false;
 
     public Todo() {
@@ -28,7 +25,19 @@ public class Todo {
         this.done = done;
     }
 
+    public long getId(){
+        return id;
+    }
+
     public String getTitle() {
         return title;
+    }
+
+    public boolean isUrgent(){
+        return urgent;
+    }
+
+    public boolean isDone(){
+        return done;
     }
 }
