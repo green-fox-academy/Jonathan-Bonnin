@@ -21,7 +21,7 @@ public class TodoApplicationStarter implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        //repo.deleteAll();
+        repo.deleteAll();
         repo.save(new Todo("Learn Object Relational Mapping", false, false));
         repo.save(new Todo("Finish the Green Fox Club project", false, false));
         repo.save(new Todo("Create fair & open source FB clone", true, true));

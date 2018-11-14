@@ -23,7 +23,7 @@ public class TodoController {
         List<Todo> todos = new ArrayList<>();
         repo.findAll().forEach(todos::add);
 
-        if(active){
+        if (active) {
             todos = todos.stream().
                     filter(todo -> !todo.isDone()).
                     collect(Collectors.toList());
@@ -35,20 +35,26 @@ public class TodoController {
     }
 
     @GetMapping("/add")
-    public String showAddTodo(Model model){
+    public String showAddTodo(Model model) {
         model.addAttribute("todo", new Todo());
         return "add";
     }
 
-    @PostMapping("/add")
-    public String submitTodo(@ModelAttribute Todo todo){
+    @PostMapping("/saveTodo")
+    public String submitTodo(Todo todo) {
         repo.save(todo);
         return "redirect:list";
     }
 
     @GetMapping("/{id}/delete")
-    public String deleteTodo(@PathVariable long id){
+    public String deleteTodo(@PathVariable long id) {
         repo.deleteById(id);
         return "redirect:/todo/list";
+    }
+
+    @GetMapping("/{id}/edit")
+    public String editTodo(Model model, @PathVariable long id) {
+        model.addAttribute("todo", repo.findById(id).get());
+        return "edit";
     }
 }
