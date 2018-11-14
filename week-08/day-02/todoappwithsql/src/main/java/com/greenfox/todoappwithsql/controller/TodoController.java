@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +24,7 @@ public class TodoController {
         List<Todo> todos = new ArrayList<>();
         repo.findAll().forEach(todos::add);
 
+
         if (active) {
             todos = todos.stream().
                     filter(todo -> !todo.isDone()).
@@ -30,6 +32,17 @@ public class TodoController {
         }
 
         model.addAttribute("todos", todos);
+
+        int doneTodos = 0;
+
+        for (Todo todo : todos){
+            if (todo.isDone()) {
+                doneTodos++;
+            }
+        }
+        if (doneTodos == todos.size()){
+            return procrastinate();
+        }
 
         return "todolist";
     }
@@ -56,5 +69,9 @@ public class TodoController {
     public String editTodo(Model model, @PathVariable long id) {
         model.addAttribute("todo", repo.findById(id).get());
         return "edit";
+    }
+
+    public String procrastinate(){
+        return "redirect:https://www.reddit.com/r/procrastinate";
     }
 }
