@@ -10,7 +10,7 @@ public class Todo {
 
     @Id
     @GeneratedValue
-    long id;
+    private long id;
     String title;
     boolean urgent = false;
     boolean done = false;
@@ -29,7 +29,7 @@ public class Todo {
         this.done = done;
     }
 
-    public long getId(){
+    public long getId() {
         return id;
     }
 
@@ -37,11 +37,15 @@ public class Todo {
         return title;
     }
 
-    public boolean isUrgent(){
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public boolean isUrgent() {
         return urgent;
     }
 
-    public boolean isDone(){
+    public boolean isDone() {
         return done;
     }
 }
