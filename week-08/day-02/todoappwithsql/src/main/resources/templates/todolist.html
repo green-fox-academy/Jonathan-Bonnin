@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
+    <link rel="stylesheet" href="/stylesheet.css">
     <meta charset="UTF-8"/>
     <title>Todo app</title>
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
           integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Catamaran|Lato" rel="stylesheet">
-    <link rel="stylesheet" href="/styles.css">
+
 
 </head>
 <body>
@@ -15,15 +16,15 @@
     <header>
         <h1>TODO LIST:</h1>
         <label class="switch">
-            <input type="checkbox">
-            <span class="slider round"></span>
+            <input type="checkbox" id="is-active-checkbox">
+            <span class="slider round" id="is-active"></span>
         </label>
         <label class="switch">
-            <input type="checkbox">
-            <span class="slider round"></span>
+            <input type="checkbox" id="is-important-checkbox">
+            <span class="slider round" id="is-important"></span>
         </label>
     </header>
-    <form action="/todo/saveTodo" th:object="${todo}" method="post">
+    <form th:action="${isActive} ? '/todo/saveTodo?isActive=true' : '/todo/saveTodo'" th:object="${todo}" method="post">
         <input type="text" th:field="*{title}" required="required" th:placeholder="'Add task...'">
         <button type="submit"><i class="fas fa-plus"></i></button>
     </form>
@@ -37,5 +38,6 @@
         </li>
     </ul>
 </main>
+<script src="/script.js"></script>
 </body>
 </html>

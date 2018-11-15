@@ -24,35 +24,22 @@ public class TodoController {
         List<Todo> todos = new ArrayList<>();
         repo.findAll().forEach(todos::add);
 
-
         if (active) {
             todos = todos.stream().
                     filter(todo -> !todo.isDone()).
                     collect(Collectors.toList());
         }
-
-
-
-        int doneTodos = 0;
-
-        for (Todo todo : todos){
-            if (todo.isDone()) {
-                doneTodos++;
-            }
-        }
-        if (doneTodos == todos.size()){
-            return procrastinate();
-        }
-
+        model.addAttribute("isActive", active);
         model.addAttribute("todos", todos);
         model.addAttribute("todo", new Todo());
+
         return "todolist";
     }
 
     @PostMapping("/saveTodo")
-    public String submitTodo(Todo todo) {
+    public String submitTodo(Todo todo, @RequestParam(value = "isActive", required = false) boolean active) {
         repo.save(todo);
-        return "redirect:list";
+        return active ? "redirect:list?isActive=true" : "redirect:list";
     }
 
     @GetMapping("/{id}/delete")
@@ -65,9 +52,5 @@ public class TodoController {
     public String editTodo(Model model, @PathVariable long id) {
         model.addAttribute("todo", repo.findById(id).get());
         return "edit";
-    }
-
-    public String procrastinate(){
-        return "redirect:https://www.reddit.com/r/procrastinate";
     }
 }
