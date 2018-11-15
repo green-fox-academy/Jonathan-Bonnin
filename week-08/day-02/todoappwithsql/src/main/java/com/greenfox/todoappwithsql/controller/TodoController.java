@@ -31,7 +31,7 @@ public class TodoController {
                     collect(Collectors.toList());
         }
 
-        model.addAttribute("todos", todos);
+
 
         int doneTodos = 0;
 
@@ -44,13 +44,9 @@ public class TodoController {
             return procrastinate();
         }
 
-        return "todolist";
-    }
-
-    @GetMapping("/add")
-    public String showAddTodo(Model model) {
+        model.addAttribute("todos", todos);
         model.addAttribute("todo", new Todo());
-        return "add";
+        return "todolist";
     }
 
     @PostMapping("/saveTodo")

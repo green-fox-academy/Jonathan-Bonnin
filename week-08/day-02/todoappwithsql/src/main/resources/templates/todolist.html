@@ -10,7 +10,10 @@
 </head>
 <body>
 <h1>TODO LIST:</h1>
-<a th:href="@{add}">Add new todo?</a>
+<form action="/todo/saveTodo" th:object="${todo}" method="post">
+    <input type="text" th:field="*{title}">
+    <button type="submit" value="Submit">Add todo</button>
+</form>
 <table>
     <tr>
         <th>#</th>
