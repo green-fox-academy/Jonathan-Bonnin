@@ -4,25 +4,36 @@
     <meta charset="UTF-8"/>
     <title>Todo app</title>
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+          integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Catamaran|Lato" rel="stylesheet">
     <link rel="stylesheet" href="/styles.css">
 
 </head>
 <body>
 <main>
-    <h1>TODO LIST:</h1>
+    <header>
+        <h1>TODO LIST:</h1>
+        <label class="switch">
+            <input type="checkbox">
+            <span class="slider round"></span>
+        </label>
+        <label class="switch">
+            <input type="checkbox">
+            <span class="slider round"></span>
+        </label>
+    </header>
     <form action="/todo/saveTodo" th:object="${todo}" method="post">
-        <input type="text" th:field="*{title}" required="required">
+        <input type="text" th:field="*{title}" required="required" th:placeholder="'Add task...'">
         <button type="submit"><i class="fas fa-plus"></i></button>
     </form>
     <ul>
         <li th:each="todo : ${todos}">
-            <span th:text="${todo.title}"></span>
-            <span th:text="${todo.urgent}"></span>
-            <span th:text="${todo.done}"></span>
-            <a th:href="${todo.id} + '/delete'">Delete?</a>
-            <a th:href="${todo.id} + '/edit'">Edit...</a>
+            <span class="delete"><a th:href="${todo.id} + '/delete'"><i class="fas fa-trash-alt"></i></a></span>
+            <span class="task" th:text="${todo.title}" th:classappend="${todo.done} ? done : none">></span>
+            <span class="important"><i
+                    th:classappend="${todo.urgent && !todo.done} ? 'fas fa-exclamation-circle' : none"></i></span>
+            <span class="edit"><a th:href="${todo.id} + '/edit'"><i class="fas fa-edit"></i></a></span>
         </li>
     </ul>
 </main>
