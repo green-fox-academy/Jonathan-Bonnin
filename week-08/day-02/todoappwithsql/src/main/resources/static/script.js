@@ -1,38 +1,43 @@
-var doneToggler = document.getElementById("is-active");
-var doneCheckbox = document.getElementById("is-active-checkbox");
-var importantToggler = document.getElementById("is-important");
-var importantCheckbox = document.getElementById("is-important-checkbox");
-var todos = document.getElementsByTagName("li");
+const doneToggler = document.getElementById("is-active");
+const doneCheckbox = document.getElementById("is-active-checkbox");
+const importantToggler = document.getElementById("is-important");
+const importantCheckbox = document.getElementById("is-important-checkbox");
+const todos = Array.from(document.querySelectorAll("li"));
 
-var hideDoneTasks = function () {
-    for (var i = 0; i < todos.length; i++) {
-        if (todos[i].children[1].classList.contains("done")) {
-            todos[i].classList.add("hidden");
-        }
-    }
-}
-var showAllTasks = function () {
-        for (var i = 0; i < todos.length; i++) {
-            todos[i].classList.remove("hidden");
-        }
-}
-
-var hideUnimportantTasks = function () {
-    for (var i = 0; i < todos.length; i++) {
-        if (!todos[i].children[2].firstElementChild.classList.contains("fa-exclamation-circle")) {
-            todos[i].classList.add("hidden");
-        }
+const showAllTasks = function () {
+    for (let todo of todos) {
+        todo.classList.remove("hidden")
     }
 }
 
-doneToggler.addEventListener("click", function (ev) {
-    doneCheckbox.checked ? showAllTasks() : hideDoneTasks();
+const hideDoneTasks = function () {
+    let doneTasks = document.querySelectorAll(".done");
+    doneTasks.forEach(t => t.parentElement.classList.add("hidden"));
+}
+
+const hideUnimportantTasks = function () {
+    let unimportantTasks = todos.filter(t => !t.children[2].children[0].classList.contains("fa-exclamation-circle"));
+    unimportantTasks.forEach(t => t.classList.add("hidden"));
+}
+
+doneToggler.addEventListener("click", function () {
+    if (!importantCheckbox.checked) {
+        if (doneCheckbox.checked) {
+            showAllTasks();
+        } else {
+            hideDoneTasks();
+        }
+    }
 })
 
-importantToggler.addEventListener("click", function (ev) {
+importantToggler.addEventListener("click", function () {
     doneCheckbox.disabled = !doneCheckbox.disabled;
-    importantCheckbox.checked ? showAllTasks() : hideUnimportantTasks();
-    if (doneCheckbox.checked){
+    if (importantCheckbox.checked) {
+        showAllTasks();
+    } else {
+        hideUnimportantTasks();
+    }
+    if (doneCheckbox.checked) {
         hideDoneTasks();
     }
 })

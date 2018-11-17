@@ -20,26 +20,18 @@ public class TodoController {
     TodoRepository repo;
 
     @GetMapping(value = {"/list", "/"})
-    public String list(Model model, @RequestParam(value = "isActive", required = false) boolean active) {
-        List<Todo> todos = new ArrayList<>();
-        repo.findAll().forEach(todos::add);
+    public String list(Model model) {
 
-        if (active) {
-            todos = todos.stream().
-                    filter(todo -> !todo.isDone()).
-                    collect(Collectors.toList());
-        }
-        model.addAttribute("isActive", active);
-        model.addAttribute("todos", todos);
+        model.addAttribute("todos", repo.findAll());
         model.addAttribute("todo", new Todo());
 
         return "todolist";
     }
 
     @PostMapping("/saveTodo")
-    public String submitTodo(Todo todo, @RequestParam(value = "isActive", required = false) boolean active) {
+    public String submitTodo(Todo todo) {
         repo.save(todo);
-        return active ? "redirect:list?isActive=true" : "redirect:list";
+        return "redirect:list";
     }
 
     @GetMapping("/{id}/delete")

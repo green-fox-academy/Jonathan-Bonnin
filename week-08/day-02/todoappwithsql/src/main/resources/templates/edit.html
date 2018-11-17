@@ -3,32 +3,41 @@
 <head>
     <meta charset="UTF-8"/>
     <title>Add todo</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+          integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Catamaran|Lato" rel="stylesheet">
 
 </head>
 <body>
-<h1>Edit todo</h1>
-<form action="/todo/saveTodo" th:object="${todo}" method="post">
-    <input type="text" th:field="*{id}" hidden>
-    <input type="text" th:field="*{title}">
-    <table>
-        <tr>
-            <th></th>
-            <th>Yes</th>
-            <th>No</th>
-        </tr>
-        <tr>
-            <td>Urgent?</td>
-            <td><input type="radio" name="urgent" value="true" th:checked="*{urgent}" th:field="*{urgent}"></td>
-            <td><input type="radio" name="urgent" value="false" th:checked="!*{urgent}"></td>
-        </tr>
-        <tr>
-            <td>Done?</td>
-            <td><input type="radio" name="done" value="true" th:checked="*{done}" th:field="*{done}"></td>
-            <td><input type="radio" name="done" value="false" th:checked="!*{done}"></td>
-        </tr>
-    </table>
-    <button type="submit" value="Submit">Edit todo</button>
-</form>
+<header>
+    <h1>Edit todo</h1>
+</header>
+<main>
+    <form action="/todo/saveTodo" th:object="${todo}" method="post">
+        <input type="text" th:field="*{id}" hidden>
+        <input type="text" th:field="*{title}" autofocus required="required">
+        <button type="submit" value="Submit"><i class="fas fa-edit"></i></button>
+        <table>
+            <tr>
+                <th></th>
+                <th>Yes</th>
+                <th>No</th>
+                <th></th>
+                <th>Yes</th>
+                <th>No</th>
+            </tr>
+            <tr>
+                <td>Important?</td>
+                <td><input type="radio" name="urgent" value="true" th:checked="*{urgent}" th:field="*{urgent}"></td>
+                <td><input type="radio" name="urgent" value="false" th:checked="!*{urgent}"></td>
+                <td>Done?</td>
+                <td><input type="radio" name="done" value="true" th:checked="*{done}" th:field="*{done}"></td>
+                <td><input type="radio" name="done" value="false" th:checked="!*{done}"></td>
+            </tr>
+        </table>
+    </form>
+</main>
 
 </body>
 </html>

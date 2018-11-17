@@ -9,11 +9,13 @@ body {
 header {
     background: #2980b9;
     padding-bottom: 5px;
+    margin: 100px auto 0 auto;
+    width: 480px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.7);
 }
 
 h1 {
     color: white;
-    margin: 0;
     padding: 10px;
     padding-bottom: 0;
     text-transform: uppercase;
@@ -25,7 +27,6 @@ h1 {
 
 main {
     width: 480px;
-    margin: 100px auto;
     background: #f7f7f7;
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.7);
 }
@@ -97,7 +98,7 @@ input:focus {
 }
 
 .fa-edit {
-    padding-left: 12px;
+    padding-left: 6px;
 }
 
 .fa-trash-alt {
@@ -168,11 +169,11 @@ a:visited {
 }
 
 input:checked + .slider {
-    background-color: #2196F3;
+    background-color: #14f30e;
 }
 
 input:focus + .slider {
-    box-shadow: 0 0 1px #2196F3;
+    box-shadow: 0 0 1px #14f30e;
 }
 
 input:checked + .slider:before {
