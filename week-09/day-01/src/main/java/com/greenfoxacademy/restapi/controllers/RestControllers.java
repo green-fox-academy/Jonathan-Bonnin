@@ -1,5 +1,6 @@
 package com.greenfoxacademy.restapi.controllers;
 
+import com.greenfoxacademy.restapi.models.OperationAndNumbers;
 import com.greenfoxacademy.restapi.services.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -31,6 +32,12 @@ public class RestControllers {
     public Object doUntil(@PathVariable String action, @RequestBody(required = false) HashMap<String, Object> until) {
         int input = (int) until.get("until");
         return service.doUntil(action, input);
+    }
+
+    @PostMapping("arrays")
+    public Object operateNumbers(@RequestBody(required = false) OperationAndNumbers operationAndNumbers){
+
+        return service.operateNumbers(operationAndNumbers);
     }
 
 

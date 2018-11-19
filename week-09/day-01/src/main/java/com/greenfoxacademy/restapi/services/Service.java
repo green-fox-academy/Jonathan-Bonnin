@@ -1,6 +1,7 @@
 package com.greenfoxacademy.restapi.services;
 
 import com.fasterxml.jackson.databind.util.JSONPObject;
+import com.greenfoxacademy.restapi.models.OperationAndNumbers;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -78,5 +79,30 @@ public class Service {
 
     public int factorial(int number) {
         return number > 1 ? number * factorial(number - 1) : 1;
+    }
+
+    public Object operateNumbers(OperationAndNumbers operationAndNumbers) {
+        HashMap<String, Object> output = new HashMap<>();
+        String operation = operationAndNumbers.getWhat();
+        Integer[] numbers = operationAndNumbers.getNumbers();
+        int result = 0;
+        if (operation.equals("sum")) {
+            for (int num : numbers) {
+                result += num;
+            }
+        } else if (operation.equals("multiply")) {
+            result = 1;
+            for (int num : numbers) {
+                result *= num;
+            }
+        } else if (operation.equals("double")) {
+            for (int num : numbers) {
+                num *= 2;
+            }
+            output.put("result", numbers);
+            return output;
+        }
+        output.put("result", result);
+        return output;
     }
 }
