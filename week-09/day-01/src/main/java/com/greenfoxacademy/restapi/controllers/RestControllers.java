@@ -2,9 +2,9 @@ package com.greenfoxacademy.restapi.controllers;
 
 import com.greenfoxacademy.restapi.services.Service;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.HashMap;
 
 @RestController
 public class RestControllers {
@@ -22,6 +22,16 @@ public class RestControllers {
         return service.greeter(name, title);
     }
 
+    @GetMapping("/appenda/{appendable}")
+    public Object appender(@PathVariable String appendable) {
+        return service.appendA(appendable);
+    }
+
+    @PostMapping("/dountil/{action}")
+    public Object doUntil(@PathVariable String action, @RequestBody(required = false) HashMap<String, Object> until) {
+        int input = (int) until.get("until");
+        return service.doUntil(action, input);
+    }
 
 
 }
