@@ -16,4 +16,12 @@ public class RestControllers {
     public Object doubles(@RequestParam(value = "input", required = false) Integer input) {
         return service.doubling(input);
     }
+
+    @GetMapping("/greeter")
+    public Object greeter(@RequestParam(value = "name", required = false) String name, @RequestParam(value = "title", required = false) String title) {
+        return service.greeter(name, title);
+    }
+
+
+
 }
