@@ -28,4 +28,16 @@ public class OperationAndNumbers {
     public void setNumbers(Integer[] numbers) {
         this.numbers = numbers;
     }
+
+    public String numbersToString(){
+        String numbersInString = "[";
+        for (int i = 0; i < numbers.length-1; i++) {
+            numbersInString += i + " ,";
+        }
+        numbersInString += numbers[numbers.length-1] + "]";
+
+        return numbersInString;
+    }
+
+
 }
