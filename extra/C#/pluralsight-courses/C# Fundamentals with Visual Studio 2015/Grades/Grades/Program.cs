@@ -13,6 +13,10 @@ namespace Grades
             GradeBook book = new GradeBook();
             book.AddGrade(91);
             book.AddGrade(75.9f);
+            //this is to illustrate that a new instance of GradeBook 
+            //called book overwrites the previous one
+            book = new GradeBook();
+            book.AddGrade(80);
         }
     }
 }
