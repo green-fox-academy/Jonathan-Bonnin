@@ -19,9 +19,21 @@ namespace Grades
             grades.Add(grade);
         }
 
-        internal GradeStatistics ComputeStatistics()
+        public GradeStatistics ComputeStatistics()
         {
-            throw new NotImplementedException();
+            GradeStatistics stats = new GradeStatistics();
+
+            float sum = 0;
+            foreach(float grade in grades)
+            {
+                stats.HighestGrade = Math.Max(stats.HighestGrade, grade);
+                stats.LowestGrade = Math.Min(stats.LowestGrade, grade);
+                sum += grade;
+            }
+
+            stats.AverageGrade = sum / grades.Count;
+
+            return stats;
         }
     }
 }
