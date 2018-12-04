@@ -18,5 +18,10 @@ namespace Grades
         {
             grades.Add(grade);
         }
+
+        internal GradeStatistics ComputeStatistics()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
