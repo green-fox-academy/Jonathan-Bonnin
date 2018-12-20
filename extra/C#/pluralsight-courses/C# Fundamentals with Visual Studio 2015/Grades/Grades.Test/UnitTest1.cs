@@ -7,9 +7,6 @@ namespace Grades.Test
     public class UnitTest1
     {
         [TestMethod]
-        public void TestMethod1()
-        {
-            Assert.Equals(3, 4);
-        }
+        public void TestMethod1() => Assert.AreNotEqual(3, 4);
     }
 }

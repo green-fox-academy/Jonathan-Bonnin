@@ -1,0 +1,59 @@
+﻿@model IEnumerable<WebApplication2.Models.Post>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<form asp-action="Sort">
+    <label for="quantity">Quanity per page</label>
+    <select id="quantity">
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="25">25</option>
+        <option value="1000">1000</option>
+    </select>
+    <label for="sorting">Sort by...</label>
+    <select id="sorting" name="sortby">
+        <option value="MostPopular">MostUpvotes</option>
+        <option value="MostRecent">LeastUpvotes</option>
+    </select>
+    <input type="submit" value="Save" class="btn btn-default" />
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (Post post in Model) {
+        <tr>
+            <td>
+                @Html.ActionLink("+", "PlusOne", new { post.Id })
+            </td>
+            <td>
+                @Html.ActionLink("-", "MinusOne", new { post.Id })
+            </td>
+            <td>
+                @post.Score
+            </td>
+            <td>
+                @post.Title
+            </td>
+            <td>
+                @post.Url
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { post.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { post.Id })
+            </td>
+
+        </tr>
+}
+    </tbody>
+</table>

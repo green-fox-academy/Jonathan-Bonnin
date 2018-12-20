@@ -12,13 +12,13 @@ namespace Grades
         static void Main(string[] args)
         {
             SpeechSynthesizer synth = new SpeechSynthesizer();
-
-            synth.Speak("Sur le Pont d'Avignon L'on y danse, l'on y danse Sur le Pont d'Avignon L'on y danse tous en rond");
+            //jgjhgjhg string
+            synth.Speak("Hello Voyta I am a C# application!");
 
             GradeBook book = new GradeBook();
             book.AddGrade(91);
-            book.AddGrade(75.9f);
-            book.AddGrade(84);
+            //book.AddGrade(75.9f);
+            //book.AddGrade(84);
 
             GradeStatistics stats = book.ComputeStatistics();
             Console.WriteLine(stats.AverageGrade);

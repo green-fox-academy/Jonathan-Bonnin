@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace MyFirstSharpApp.Controllers
 {
+    [Route("/")]
     public class HomeController : Controller
     {
         public ActionResult Index()
@@ -14,7 +15,7 @@ namespace MyFirstSharpApp.Controllers
 
             return View();
         }
-
+        [Route("123")]
         public ActionResult Michel()
         {
             return View();
